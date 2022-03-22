@@ -1,0 +1,142 @@
+.places-cards {
+  margin-top: 20px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    align-self: flex-start;
+    margin-top: 55px;
+  }
+}
+
+.places-cards__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+
+  gap: 35px;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+
+    gap: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    gap: 60px;
+  }
+}
+
+.places-cards__item {
+  width: 288px;
+  height: 425px;
+
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @desktop-width) {
+    width: 350px;
+    height: 430px;
+
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-left: 60px;
+    }
+  }
+}
+
+.places-cards__link {
+  position: relative;
+
+  &:hover,
+  &:active {
+    &::before {
+      position: absolute;
+      content: "СМОТРЕТЬ ПОДРОБНЕЕ";
+
+      width: 76%;
+      min-height: 77px;
+
+      left: 50%;
+      bottom: 137%;
+      transform: translate(-50%, -137%);
+
+      z-index: 2;
+
+      color: @default-white;
+      border: 1px solid @white-opacity;
+
+      box-sizing: border-box;
+      padding: 30px 22px;
+
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 500;
+      letter-spacing: 2px;
+
+      @media (min-width: @desktop-width) {
+        bottom: 180%;
+        transform: translate(-50%, -180%);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+
+      width: 100%;
+      height: 425px;
+
+      left: 0;
+      bottom: 5px;
+
+      z-index: 1;
+
+      background-color: @darkest-gray-hover;
+    }
+  }
+}
+
+.places-cards__link-name {
+  position: absolute;
+
+  width: 215px;
+  min-height: 61px;
+  background-color: @default-white;
+
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%);
+
+  box-sizing: border-box;
+  padding: 16px;
+  word-wrap: break-word;
+
+  color: @main-indigo;
+
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+
+  @media (min-width: @desktop-width) {
+    min-height: 63px;
+    bottom: 3px;
+  }
+}
+
+.places-cards__image {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @desktop-width) {
+    width: 350px;
+    height: 430px;
+  }
+}

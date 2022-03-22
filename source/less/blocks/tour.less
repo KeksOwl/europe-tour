@@ -1,0 +1,202 @@
+.tour {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  min-height: 344px;
+
+  @media (min-width: @tablet-width) {
+    box-sizing: border-box;
+    padding: 30px;
+    align-content: flex-start;
+
+    padding-top: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-height: 860px;
+    padding: 60px;
+
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: flex-start;
+  }
+
+  &::before {
+    @media (min-width: @tablet-width) {
+      content: "";
+      position: absolute;
+
+      width: 100vw;
+      height: 100%;
+
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+
+      background-color: @background-blue;
+      background-image: url("../img/tour/tour-wrapper-tablet.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/tour/tour-wrapper-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: @desktop-width) {
+      background-image: url("../img/tour/tour-wrapper-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/tour/tour-wrapper-desktop@2x.jpg");
+      }
+    }
+  }
+}
+
+.tour__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  min-height: 235px;
+
+  @media (min-width: @tablet-width) {
+    min-height: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 412px;
+
+    margin-bottom: 30px;
+    margin-top: 125px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    width: 100vw;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+
+    background-color: @background-blue;
+    background-image: url("../img/tour/tour-wrapper-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/tour/tour-wrapper-mobile@2x.jpg");
+    }
+
+    @media (min-width: @tablet-width) {
+      width: 0;
+      height: 0;
+      background: none;
+    }
+  }
+}
+
+.tour__title {
+  color: @default-white;
+
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @desktop-width) {
+    text-align: left;
+  }
+}
+
+.tour__inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    box-sizing: border-box;
+    padding: 0 125px;
+    margin-top: 15px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0;
+    justify-content: flex-start;
+
+    width: 412px;
+
+    margin-top: 0;
+    padding-right: 20px;
+  }
+}
+
+.tour__description {
+  color: @main-indigo;
+
+  width: 100%;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+
+  line-height: 27px;
+
+  @media (min-width: @tablet-width) {
+    color: @default-white;
+
+    margin-top: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    text-align: left;
+  }
+}
+
+.tour__button {
+  display: block;
+
+  width: 288px;
+  min-height: 50px;
+
+  text-align: left;
+  box-sizing: border-box;
+  padding: 18px 55px 18px 40px;
+  margin-top: 20px;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+
+    right: 0;
+    top: 50%;
+    transform: translate(-40px, -50%);
+
+    background-image: url("../img/icons/arrow-down.svg");
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 250px;
+
+    margin-top: 10px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 340px;
+    min-height: 75px;
+    padding: 30px 55px 30px 40px;
+
+    margin-top: 33px;
+  }
+}

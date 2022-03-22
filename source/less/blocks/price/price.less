@@ -1,0 +1,164 @@
+.price {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-template-columns: 1fr;
+
+  margin-top: 45px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 41px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr max-content;
+
+    justify-self: center;
+
+    width: 100%;
+    margin-top: 250px;
+  }
+}
+
+.price__wrapper {
+  display: flex;
+  flex-flow: column wrap;
+
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 6px;
+
+  @media (min-width: @tablet-width) {
+    padding: 26px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    align-items: flex-start;
+    text-align: left;
+
+    width: 306px;
+
+    padding: 12px;
+    padding-left: 0;
+
+    grid-column: -1 / -2;
+    grid-row: 1 / 2;
+
+    align-self: center;
+  }
+}
+
+.price__title {
+  margin: 0;
+  padding: 0;
+
+  margin-top: 8px;
+
+  @media (min-width: @desktop-width) {
+    margin-top: 35px;
+    margin-bottom: 25px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+
+      width: 107%;
+      height: 3px;
+
+      left: 0;
+      bottom: -15%;
+
+      background-color: @main-carrot;
+    }
+  }
+}
+
+.price__text {
+  margin: 0;
+  padding: 0;
+
+  margin-top: 18px;
+  line-height: 27px;
+  letter-spacing: normal;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 20px;
+  }
+}
+
+.price__contact {
+  align-self: center;
+
+  margin-top: 20px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 33px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 64px;
+    padding-left: 5px;
+  }
+}
+
+.price__contact-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 34px;
+
+  color: @darkest-gray;
+
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 10px;
+
+  @media (min-width: @desktop-width) {
+    font-size: 22px;
+  }
+}
+
+.price__contact-phone {
+  color: @main-carrot;
+  text-decoration: underline;
+
+  font-size: 18px;
+  line-height: 32px;
+
+  &:hover,
+  &:active {
+    color: @main-orange;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 20px;
+
+    color: @default-black;
+    text-decoration: none;
+
+    position: relative;
+
+    &:hover,
+    &:active {
+      color: @main-carrot;
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      width: 30px;
+      height: 30px;
+
+      left: -22%;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background-image: url("../img/icons/phone-orange.svg");
+      background-repeat: no-repeat;
+    }
+  }
+}

@@ -1,0 +1,253 @@
+.price-bundles {
+  margin-top: 34px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 15px;
+    padding: 0 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    padding: 0;
+  }
+}
+
+.price-bundles__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  row-gap: 30px;
+
+  justify-items: center;
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+    column-gap: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    column-gap: 30px;
+    width: 770px;
+  }
+}
+
+.price-bundles__item {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  &:hover,
+  &:active {
+    outline: 2px solid @main-carrot;
+    outline-offset: -2px;
+    border-radius: 6px;
+
+    & .price-bundles__item-wrapper {
+      border-color: @main-carrot;
+    }
+
+    & .price-bundles__item-heading,
+    & .price-bundles__item-text--bolder {
+      color: @main-carrot;
+
+      letter-spacing: normal;
+    }
+
+    & .price-bundles__item-features-item::before {
+      background-image: url("../img/icons/check-li.svg");
+    }
+
+    & .price-bundles__item-features-list::before {
+      background-color: @main-carrot;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 288px;
+    justify-content: center;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 370px;
+    min-height: 672px;
+
+    outline: 1px solid @text-indigo-light;
+    border-radius: 6px;
+  }
+}
+
+.price-bundles__item-wrapper {
+  padding: 30px 20px 0;
+
+  border: 1px solid @text-indigo-light;
+  border-bottom: none;
+  border-radius: 6px;
+
+  @media (min-width: @desktop-width) {
+    padding: 42px 30px 0;
+
+    border: none;
+  }
+}
+
+.price-bundles__item-inner {
+  @media (min-width: @desktop-width) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+.price-bundles__item-heading {
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 10px;
+
+  font-size: 24px;
+  line-height: 34px;
+
+  color: @darkest-gray-opacity;
+
+  word-break: break-all;
+
+  @media (min-width: @desktop-width) {
+    font-size: 28px;
+    letter-spacing: -1.27px;
+  }
+}
+
+.price-bundles__item-text {
+  margin: 0;
+  padding: 0;
+
+  line-height: 24px;
+
+  color: @main-indigo;
+
+  letter-spacing: normal;
+
+  margin-bottom: 10px;
+
+  @media (min-width: @desktop-width) {
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 26px;
+
+    box-sizing: border-box;
+    padding-right: 20px;
+  }
+
+  &--bolder {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 34px;
+
+    color: @darkest-gray-opacity;
+
+    margin-bottom: 10px;
+
+    @media (min-width: @desktop-width) {
+      margin-top: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.price-bundles__item-features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 30px;
+  padding-top: 20px;
+  margin-bottom: 38px;
+
+  text-align: left;
+
+  position: relative;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 29px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 32px;
+    padding-right: 20px;
+    margin: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    background-color: @text-indigo-light;
+  }
+}
+
+.price-bundles__item-features-item {
+  position: relative;
+
+  font-size: 16px;
+  line-height: 32px;
+
+  margin-bottom: 8px;
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 13px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    left: -28px;
+    top: 10px;
+
+    background-image: url("../img/icons/check-li-orange.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.price-bundles__button {
+  display: block;
+
+  width: 100%;
+  min-height: 50px;
+
+  box-sizing: border-box;
+  padding: 19px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    margin-top: auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 310px;
+    min-height: 75px;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+}

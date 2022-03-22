@@ -1,0 +1,441 @@
+.places-about {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+
+  margin-top: 40px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 95px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 85px;
+
+    width: 100%;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+
+      width: 1444px;
+      height: 1089px;
+
+      top: 18%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -2;
+
+      background-image: url("../img/map-bg.svg");
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.places-about__list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 99px;
+
+  max-width: calc(100vw - (16px * 2));
+  overflow: scroll;
+
+  border-bottom: 1px solid @text-indigo-light;
+  padding-bottom: 15px;
+  margin-bottom: 24px;
+
+  scrollbar-width: 0; // Firefox
+
+  &::-webkit-scrollbar { // Chrome
+    height: 0;
+    width: 0;
+  }
+
+  @media (min-width: @tablet-width) {
+    max-width: calc(100vw - (21px * 2));
+
+    gap: 97px;
+
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 100%;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 35px;
+  }
+}
+
+.places-about__link {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+
+  color: @text-indigo-light;
+
+  &--actual {
+    color: @main-carrot;
+  }
+}
+
+.places-about__card {
+  display: flex;
+  flex-flow: column wrap;
+
+  align-items: center;
+
+  &--hidden {
+    display: none;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    min-height: 430px;
+    width: 100%;
+  }
+}
+
+.places-about__card-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: @desktop-width) {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 370px;
+
+    margin-top: 25px;
+  }
+}
+
+.places-about__card-title {
+  margin: 0;
+  padding: 0;
+
+  position: relative;
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 26px;
+    letter-spacing: -1.25px;
+
+    &::after {
+      content: "";
+      position: absolute;
+
+      width: 83%;
+      height: 3px;
+
+      bottom: -16px;
+      left: 0;
+
+      background-color: @main-carrot;
+    }
+  }
+}
+
+.places-about__card-description {
+  margin: 0;
+  padding: 0;
+}
+
+.places-about__card-button {
+  display: block;
+
+  width: 288px;
+  min-height: 50px;
+
+  box-sizing: border-box;
+  padding: 19px;
+  margin: 0 auto;
+
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    width: 250px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-height: 75px;
+    padding: 30px;
+    margin: 0;
+    margin-top: 30px;
+  }
+}
+
+.places-about__card-review {
+  position: relative;
+
+  width: 100%;
+  min-height: 415px;
+
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin: 0 auto;
+  margin-top: 49px;
+
+  padding-top: 50px;
+
+  @media (min-width: @tablet-width) {
+    padding: 80px 172px 0;
+
+    margin-top: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0;
+    width: calc(100% - 370px);
+    min-height: 100%;
+  }
+
+  &--first::before {
+    background-color: @background-blue;
+    background-image: url("../img/places-cards/review-greece-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/places-cards/review-greece-mobile@2x.jpg");
+    }
+
+    @media (min-width: @tablet-width) {
+      background-image: url("../img/places-cards/review-greece-tablet.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/places-cards/review-greece-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: @desktop-width) {
+      background-image: url("../img/places-cards/review-greece-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/places-cards/review-greece-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &--second::before {
+    background-color: @background-azure;
+    background-image: url("../img/places-cards/albania-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/places-cards/albania-mobile@2x.jpg");
+    }
+
+    @media (min-width: @tablet-width) {
+      background-image: url("../img/places-cards/albania-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/places-cards/albania-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &--third::before {
+    background-color: @background-brick;
+    background-image: url("../img/places-cards/macedonia-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/places-cards/macedonia-mobile@2x.jpg");
+    }
+
+    @media (min-width: @tablet-width) {
+      background-image: url("../img/places-cards/macedonia-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/places-cards/macedonia-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &--fourth::before {
+    background-color: @background-green;
+    background-image: url("../img/places-cards/montenegro-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/places-cards/montenegro-mobile@2x.jpg");
+    }
+
+    @media (min-width: @tablet-width) {
+      background-image: url("../img/places-cards/montenegro-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/places-cards/montenegro-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &--fifth::before {
+    background-color: @background-dark-brick;
+    background-image: url("../img/places-cards/croatia-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/places-cards/croatia-mobile@2x.jpg");
+    }
+
+    @media (min-width: @tablet-width) {
+      background-image: url("../img/places-cards/croatia-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/places-cards/croatia-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &--first::before,
+  &--second::before,
+  &--third::before,
+  &--fourth::before,
+  &--fifth::before {
+    position: absolute;
+    content: "";
+
+    width: 100vw;
+    height: 415px;
+
+    z-index: -1;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-width: @desktop-width) {
+      width: 430px;
+      height: 100%;
+      bottom: 0;
+      left: 26%;
+      transform: translateX(-25%);
+    }
+  }
+}
+
+.places-about__card-review-wrapper {
+  width: 100%;
+
+  background-color: @default-white;
+
+  box-sizing: border-box;
+  padding: 20px;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    align-items: flex-start;
+    text-align: left;
+    padding: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 382px;
+    margin-left: auto;
+    margin-top: 114px;
+  }
+}
+
+.places-about__card-review-heading {
+  margin: 0;
+  padding: 0;
+
+  word-break: break-all;
+
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 20px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 84%;
+    height: 1px;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: @main-carrot;
+
+    @media (min-width: @tablet-width) {
+      width: 57%;
+      left: 0;
+
+      transform: none;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    line-height: 37px;
+
+    font-size: 30px;
+    margin-top: 0;
+    letter-spacing: -0.69px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 30px;
+  }
+}
+
+.places-about__card-review-text {
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+
+  &--named {
+    color: @main-indigo;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    margin-top: 5px;
+    margin-left: 8px;
+
+    @media (min-width: @tablet-width) {
+      margin-top: 0;
+      margin-left: 15px;
+    }
+  }
+}
+
+.places-about__card-review-inner {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  margin-top: 18px;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+
+    margin-top: 32px;
+  }
+}
+
+.places-about__card-review-image {
+  border-radius: 50%;
+}
+
